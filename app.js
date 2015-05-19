@@ -12,8 +12,8 @@ var Boid = function() {
 	_depth = 100, 
 	_goal, 
 	_neighborhoodRadius = 150,
-	_maxSpeed = 4.5, 
-	_maxSteerForce = 0.6, 
+	_maxSpeed = 5, 
+	_maxSteerForce = 0.5, 
 	_avoidWalls = false;
 
 	this.position = new THREE.Vector3();
@@ -373,14 +373,12 @@ function init() {
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 	document.body.appendChild( renderer.domElement );
 
-	stats = new Stats();
-	stats.domElement.style.position = 'absolute';
-	stats.domElement.style.left = '0px';
-	stats.domElement.style.top = '0px';
+	// stats = new Stats();
+	// stats.domElement.style.position = 'absolute';
+	// stats.domElement.style.left = '0px';
+	// stats.domElement.style.top = '0px';
 
-	document.getElementById( 'container' ).appendChild(stats.domElement);
-
-	//
+	// document.getElementById( 'container' ).appendChild(stats.domElement);
 
 	window.addEventListener( 'resize', onWindowResize, false );
 
@@ -407,8 +405,6 @@ function onDocumentMouseMove( event ) {
 		boid.repulse( vector );
 	}
 }
-
-//
 
 function animate() {
 
